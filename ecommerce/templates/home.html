@@ -1,5 +1,5 @@
 {% extends 'layout.html' %}
-{% block title%}
+{% block title %}
 HomePage
 {% endblock %}
 
@@ -7,168 +7,152 @@ HomePage
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        .floating { animation: float 6s ease-in-out infinite; }
-        .gradient-text {
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .floating { animation: float 6s ease-in-out infinite; }
+  </style>
 </head>
 <body class="bg-gray-50">
 
-    <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-900 text-white overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-0 left-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
-        </div>
-        
-        <div class="container mx-auto px-6 py-24 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center">
-                <div class="lg:w-1/2 mb-12 lg:mb-0">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                        Everest <span class="gradient-text bg-gradient-to-r from-yellow-400 to-orange-500">Mobile Service</span>
-                    </h1>
-                    <p class="text-xl text-blue-100 mb-8 max-w-lg">
-                        Your trusted destination for fast mobile repairs, quality accessories, and expert support — all under one roof.
-                    </p>
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <button class="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-8 py-4 rounded-xl font-bold hover:from-yellow-500 hover:to-orange-600 transition-all transform hover:scale-105 shadow-lg">
-                            Book a Repair
-                        </button>
-                        <button class="bg-white bg-opacity-20 text-white px-8 py-4 rounded-xl font-bold hover:bg-opacity-30 transition-all border border-white border-opacity-30">
-                            View Services
-                        </button>
-                    </div>
-                </div>
-                <div class="lg:w-1/2 flex justify-center">
-                    <div class="relative w-full max-w-md">
-                        <div class="absolute -top-10 -left-10 w-32 h-32 bg-yellow-400 rounded-full filter blur-3xl opacity-30"></div>
-                        <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-orange-500 rounded-full filter blur-3xl opacity-30"></div>
-                        <img src="https://scontent.fktm3-1.fna.fbcdn.net/v/t39.30808-6/305798601_576961320807320_2129128770725710187_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=EX5SQxrHgzMQ7kNvwEpzkgK&_nc_oc=Adnah6aPW-Z5_gH3ZzouuPHTnL2mdRGxvI8hnETK58Vz1box8I4KNF8LRI3ifYrZaD2-32GBzGazMw6gjuFmfUQX&_nc_zt=23&_nc_ht=scontent.fktm3-1.fna&_nc_gid=N6-6tN7RRZDa-gn-5iMWGA&oh=00_AfU5S84Ht7fnI-ip1TsG9TF54hdSLTahIip1I5pjDIANbA&oe=68A28622" 
-                             alt="Mobile Repair" 
-                             class="relative z-10 w-full floating rounded-xl shadow-lg">
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent"></div>
-    </section>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-r from-indigo-900 via-purple-800 to-indigo-900 min-h-screen flex items-center justify-center">
+    <div class="text-center px-6 md:px-12 relative z-10">
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-white">
+        Shop the Latest <span class="text-pink-400">Tech & Gadgets</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-200 mb-8">
+        Upgrade your lifestyle with top-quality gadgets, mobiles, and accessories.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#shop"
+           class="px-6 py-3 bg-pink-500 text-white font-semibold rounded-lg shadow-lg hover:bg-pink-600 transition transform hover:scale-105">
+           Shop Now
+        </a>
+        <a href="#featured"
+           class="px-6 py-3 border border-pink-400 text-pink-400 font-semibold rounded-lg hover:bg-pink-500 hover:text-white transition">
+           Explore Deals
+        </a>
+      </div>
+    </div>
+    <!-- Background Decoration -->
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')] bg-cover bg-center opacity-20"></div>
+  </section>
 
-    <!-- Features Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <span class="text-sm font-semibold tracking-wider uppercase text-blue-600">Our Services</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Why Choose Everest Mobile Service?</h2>
-                <p class="max-w-2xl mx-auto text-gray-600 mt-4">
-                    We provide top-quality mobile repair and maintenance services with genuine parts and expert technicians.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Fast Repairs -->
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
-                    <div class="h-48 bg-gradient-to-r from-green-500 to-teal-500 flex items-center justify-center">
-                        <i class="fas fa-bolt text-white text-6xl"></i>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Fast Repairs</h3>
-                        <p class="text-gray-600 mb-4">
-                            Get your phone fixed in as little as 30 minutes with our express repair service.
-                        </p>
-                        <a href="#" class="text-blue-600 font-semibold inline-flex items-center">
-                            Learn more <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Quality Parts -->
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
-                    <div class="h-48 bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center">
-                        <i class="fas fa-cogs text-white text-6xl"></i>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Quality Parts</h3>
-                        <p class="text-gray-600 mb-4">
-                            We only use original or high-grade replacement parts for lasting performance.
-                        </p>
-                        <a href="#" class="text-blue-600 font-semibold inline-flex items-center">
-                            Learn more <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Warranty -->
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
-                    <div class="h-48 bg-gradient-to-r from-purple-500 to-indigo-600 flex items-center justify-center">
-                        <i class="fas fa-shield-alt text-white text-6xl"></i>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Warranty Included</h3>
-                        <p class="text-gray-600 mb-4">
-                            All repairs come with a service warranty to give you complete peace of mind.
-                        </p>
-                        <a href="#" class="text-blue-600 font-semibold inline-flex items-center">
-                            Learn more <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+  <!-- Features Section -->
+ 
+<section class="py-20 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="text-sm font-semibold tracking-wider uppercase text-pink-500">Our Services</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Why Choose Everest Mobile Service?</h2>
+      <p class="max-w-2xl mx-auto text-gray-600 mt-4">
+        We provide top-quality mobile repair and maintenance services with genuine parts and expert technicians.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Fast Repairs -->
+      <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
+        <div class="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
+          <i class="fas fa-bolt text-white text-6xl"></i>
         </div>
-    </section>
+        <div class="p-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">Fast Repairs</h3>
+          <p class="text-gray-600 mb-4">
+            Get your phone fixed in as little as 30 minutes with our express repair service.
+          </p>
+          <a href="#" class="text-pink-500 font-semibold inline-flex items-center hover:text-indigo-600 transition">
+            Learn more <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Quality Parts -->
+      <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
+        <div class="h-48 bg-gradient-to-r from-pink-500 to-rose-600 flex items-center justify-center">
+          <i class="fas fa-cogs text-white text-6xl"></i>
+        </div>
+        <div class="p-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">Quality Parts</h3>
+          <p class="text-gray-600 mb-4">
+            We only use original or high-grade replacement parts for lasting performance.
+          </p>
+          <a href="#" class="text-pink-500 font-semibold inline-flex items-center hover:text-indigo-600 transition">
+            Learn more <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Warranty -->
+      <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
+        <div class="h-48 bg-gradient-to-r from-purple-500 to-indigo-600 flex items-center justify-center">
+          <i class="fas fa-shield-alt text-white text-6xl"></i>
+        </div>
+        <div class="p-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">Warranty Included</h3>
+          <p class="text-gray-600 mb-4">
+            All repairs come with a service warranty to give you complete peace of mind.
+          </p>
+          <a href="#" class="text-pink-500 font-semibold inline-flex items-center hover:text-indigo-600 transition">
+            Learn more <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Stats Section -->
-    <section class="py-20 bg-gradient-to-br from-indigo-600 to-purple-700 text-white">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="p-6">
-                    <div class="text-5xl font-bold mb-2">5K+</div>
-                    <div class="text-indigo-200 font-medium">Phones Repaired</div>
-                </div>
-                <div class="p-6">
-                    <div class="text-5xl font-bold mb-2">98%</div>
-                    <div class="text-indigo-200 font-medium">Happy Customers</div>
-                </div>
-                <div class="p-6">
-                    <div class="text-5xl font-bold mb-2">15+</div>
-                    <div class="text-indigo-200 font-medium">Years Experience</div>
-                </div>
-                <div class="p-6">
-                    <div class="text-5xl font-bold mb-2">24/7</div>
-                    <div class="text-indigo-200 font-medium">Support</div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-gray-800 to-indigo-700 text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Need Your Phone Fixed Today?</h2>
-            <p class="max-w-2xl mx-auto text-blue-100 mb-8 text-xl">
-                Visit Everest Mobile Service or book your repair online now — fast, reliable, and affordable.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <button class="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
-                    Book a Repair
-                </button>
-                <button class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:bg-opacity-10 transition-all">
-                    Contact Us
-                </button>
-            </div>
+  <!-- Stats Section -->
+  <section class="py-20 bg-indigo-900 text-white">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="p-6">
+          <div class="text-5xl font-extrabold text-pink-400 mb-2">5K+</div>
+          <div class="text-lg text-gray-200 font-medium">Phones Repaired</div>
         </div>
-    </section>
+        <div class="p-6">
+          <div class="text-5xl font-extrabold text-purple-400 mb-2">98%</div>
+          <div class="text-lg text-gray-200 font-medium">Happy Customers</div>
+        </div>
+        <div class="p-6">
+          <div class="text-5xl font-extrabold text-indigo-400 mb-2">15+</div>
+          <div class="text-lg text-gray-200 font-medium">Years Experience</div>
+        </div>
+        <div class="p-6">
+          <div class="text-5xl font-extrabold text-rose-400 mb-2">24/7</div>
+          <div class="text-lg text-gray-200 font-medium">Support</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-purple-700 via-indigo-800 to-pink-600 text-white">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-6 tracking-wide">
+        Need Your Phone Fixed Today?
+      </h2>
+      <p class="max-w-2xl mx-auto text-gray-200 mb-8 text-xl">
+        Visit Everest Mobile Service or book your repair online now — fast, reliable, and affordable.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+        <button class="bg-white text-indigo-700 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition transform hover:scale-105 shadow-lg">
+          Book a Repair
+        </button>
+        <button class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-indigo-800 transition">
+          Contact Us
+        </button>
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>
