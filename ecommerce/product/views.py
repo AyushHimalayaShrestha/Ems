@@ -7,6 +7,6 @@ from .models import *
 def product(request):
     product_list=Product.objects.all()
     context={
-        'product_list': product_list
+        'products': product_list
     }
-    return render(request,'product/productlists.html',context)
+    return render(request,'product/product_lists.html',context)

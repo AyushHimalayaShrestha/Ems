@@ -1,4 +1,5 @@
 {% extends 'layout.html' %}
+{% load static %}
 {% block title %}
 HomePage
 {% endblock %}
@@ -60,9 +61,10 @@ HomePage
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Fast Repairs -->
       <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
-        <div class="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
-          <i class="fas fa-bolt text-white text-6xl"></i>
-        </div>
+       <!-- Image Section -->
+          <div class="h-48">
+    <img src="{% static 'images/fastrepair.jpg' %}" alt="Fast Repairs" class="w-full h-full object-cover">
+  </div>
         <div class="p-8">
           <h3 class="text-2xl font-bold text-gray-900 mb-3">Fast Repairs</h3>
           <p class="text-gray-600 mb-4">
@@ -76,9 +78,10 @@ HomePage
       
       <!-- Quality Parts -->
       <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
-        <div class="h-48 bg-gradient-to-r from-pink-500 to-rose-600 flex items-center justify-center">
-          <i class="fas fa-cogs text-white text-6xl"></i>
-        </div>
+       <!-- Image Section -->
+          <div class="h-48">
+    <img src="{% static 'images/qualityparts.jpg' %}" alt="Fast Repairs" class="w-full h-full object-cover">
+  </div>
         <div class="p-8">
           <h3 class="text-2xl font-bold text-gray-900 mb-3">Quality Parts</h3>
           <p class="text-gray-600 mb-4">
@@ -92,9 +95,10 @@ HomePage
       
       <!-- Warranty -->
       <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
-        <div class="h-48 bg-gradient-to-r from-purple-500 to-indigo-600 flex items-center justify-center">
-          <i class="fas fa-shield-alt text-white text-6xl"></i>
-        </div>
+        <!-- Image Section -->
+          <div class="h-48">
+    <img src="{% static 'images/warranty.jpg' %}" alt="Fast Repairs" class="w-full h-full object-cover">
+  </div>
         <div class="p-8">
           <h3 class="text-2xl font-bold text-gray-900 mb-3">Warranty Included</h3>
           <p class="text-gray-600 mb-4">
