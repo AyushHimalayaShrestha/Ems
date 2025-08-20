@@ -20,20 +20,20 @@ HomePage
     .floating { animation: float 6s ease-in-out infinite; }
   </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-900 text-white">
 
   <!-- Hero Section -->
-  <section class="relative bg-gradient-to-r from-indigo-900 via-blue-800 to-cyan-900 min-h-screen flex items-center justify-center">
+  <section class="relative bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 min-h-screen flex items-center justify-center">
     <div class="text-center px-6 md:px-12 relative z-10">
       <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-white">
-        Shop the Latest <span class="text-cyan-400">Tech & Gadgets</span>
+        Shop the Latest <span class="text-teal-400">Tech & Gadgets</span>
       </h1>
-      <p class="text-lg md:text-xl text-gray-200 mb-8">
+      <p class="text-lg md:text-xl text-gray-300 mb-8">
         Upgrade your lifestyle with top-quality gadgets, mobiles, and accessories.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="#shop"
-           class="px-6 py-3 bg-cyan-500 text-white font-semibold rounded-lg shadow-lg hover:bg-cyan-600 transition transform hover:scale-105">
+        <a href="{% url 'product_lists' %}"
+           class="px-6 py-3 bg-teal-500 text-white font-semibold rounded-lg shadow-lg hover:bg-teal-600 transition transform hover:scale-105">
            Shop Now
         </a>
         <a href="#featured"
@@ -43,64 +43,64 @@ HomePage
       </div>
     </div>
     <!-- Background Decoration -->
-    <div class="absolute inset-0 bg-[url('https://cdn0.vox-cdn.com/uploads/chorus_asset/file/6384159/final_cb_0086.0.jpg')] bg-cover bg-center opacity-20"></div>
+    <div class="absolute inset-0 bg-[url('https://cdn0.vox-cdn.com/uploads/chorus_asset/file/6384159/final_cb_0086.0.jpg')] bg-cover bg-center opacity-10"></div>
   </section>
 
   <!-- Features Section -->
-<section class="py-20 bg-gray-50">
+<section class="py-20 bg-gray-900">
   <div class="container mx-auto px-6">
     <div class="text-center mb-16">
-      <span class="text-sm font-semibold tracking-wider uppercase text-cyan-500">Our Services</span>
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Why Choose Everest Mobile Service?</h2>
-      <p class="max-w-2xl mx-auto text-gray-600 mt-4">
+      <span class="text-sm font-semibold tracking-wider uppercase text-teal-400">Our Services</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">Why Choose Everest Mobile Service?</h2>
+      <p class="max-w-2xl mx-auto text-gray-400 mt-4">
         We provide top-quality mobile repair and maintenance services with genuine parts and expert technicians.
       </p>
     </div>
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Fast Repairs -->
-      <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
+      <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
         <div class="h-48">
           <img src="{% static 'images/fastrepair.jpg' %}" alt="Fast Repairs" class="w-full h-full object-cover">
         </div>
         <div class="p-8">
-          <h3 class="text-2xl font-bold text-gray-900 mb-3">Fast Repairs</h3>
-          <p class="text-gray-600 mb-4">
+          <h3 class="text-2xl font-bold text-white mb-3">Fast Repairs</h3>
+          <p class="text-gray-400 mb-4">
             Get your phone fixed in as little as 30 minutes with our express repair service.
           </p>
-          <a href="#" class="text-cyan-500 font-semibold inline-flex items-center hover:text-indigo-600 transition">
+          <a href="#" class="text-teal-400 font-semibold inline-flex items-center hover:text-indigo-400 transition">
             Learn more <i class="fas fa-arrow-right ml-2"></i>
           </a>
         </div>
       </div>
       
       <!-- Quality Parts -->
-      <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
+      <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
         <div class="h-48">
           <img src="{% static 'images/qualityparts.jpg' %}" alt="Quality Parts" class="w-full h-full object-cover">
         </div>
         <div class="p-8">
-          <h3 class="text-2xl font-bold text-gray-900 mb-3">Quality Parts</h3>
-          <p class="text-gray-600 mb-4">
+          <h3 class="text-2xl font-bold text-white mb-3">Quality Parts</h3>
+          <p class="text-gray-400 mb-4">
             We only use original or high-grade replacement parts for lasting performance.
           </p>
-          <a href="#" class="text-cyan-500 font-semibold inline-flex items-center hover:text-indigo-600 transition">
+          <a href="#" class="text-teal-400 font-semibold inline-flex items-center hover:text-indigo-400 transition">
             Learn more <i class="fas fa-arrow-right ml-2"></i>
           </a>
         </div>
       </div>
       
       <!-- Warranty -->
-      <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
+      <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
         <div class="h-48">
           <img src="{% static 'images/warranty.jpg' %}" alt="Warranty" class="w-full h-full object-cover">
         </div>
         <div class="p-8">
-          <h3 class="text-2xl font-bold text-gray-900 mb-3">Warranty Included</h3>
-          <p class="text-gray-600 mb-4">
+          <h3 class="text-2xl font-bold text-white mb-3">Warranty Included</h3>
+          <p class="text-gray-400 mb-4">
             All repairs come with a service warranty to give you complete peace of mind.
           </p>
-          <a href="#" class="text-cyan-500 font-semibold inline-flex items-center hover:text-indigo-600 transition">
+          <a href="#" class="text-teal-400 font-semibold inline-flex items-center hover:text-indigo-400 transition">
             Learn more <i class="fas fa-arrow-right ml-2"></i>
           </a>
         </div>
@@ -110,43 +110,43 @@ HomePage
 </section>
 
   <!-- Stats Section -->
-  <section class="py-20 bg-indigo-900 text-white">
+  <section class="py-20 bg-gray-950 text-white">
     <div class="container mx-auto px-6">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div class="p-6">
-          <div class="text-5xl font-extrabold text-cyan-400 mb-2">5K+</div>
-          <div class="text-lg text-gray-200 font-medium">Phones Repaired</div>
+          <div class="text-5xl font-extrabold text-teal-400 mb-2">5K+</div>
+          <div class="text-lg text-gray-400 font-medium">Phones Repaired</div>
         </div>
         <div class="p-6">
-          <div class="text-5xl font-extrabold text-blue-400 mb-2">98%</div>
-          <div class="text-lg text-gray-200 font-medium">Happy Customers</div>
+          <div class="text-5xl font-extrabold text-indigo-400 mb-2">98%</div>
+          <div class="text-lg text-gray-400 font-medium">Happy Customers</div>
         </div>
         <div class="p-6">
-          <div class="text-5xl font-extrabold text-indigo-400 mb-2">15+</div>
-          <div class="text-lg text-gray-200 font-medium">Years Experience</div>
+          <div class="text-5xl font-extrabold text-cyan-400 mb-2">15+</div>
+          <div class="text-lg text-gray-400 font-medium">Years Experience</div>
         </div>
         <div class="p-6">
-          <div class="text-5xl font-extrabold text-teal-400 mb-2">24/7</div>
-          <div class="text-lg text-gray-200 font-medium">Support</div>
+          <div class="text-5xl font-extrabold text-purple-400 mb-2">24/7</div>
+          <div class="text-lg text-gray-400 font-medium">Support</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="py-20 bg-gradient-to-r from-indigo-700 via-blue-800 to-cyan-700 text-white">
+  <section class="py-20 bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white">
     <div class="container mx-auto px-6 text-center">
       <h2 class="text-3xl md:text-4xl font-extrabold mb-6 tracking-wide">
         Need Your Phone Fixed Today?
       </h2>
-      <p class="max-w-2xl mx-auto text-gray-200 mb-8 text-xl">
+      <p class="max-w-2xl mx-auto text-gray-400 mb-8 text-xl">
         Visit Everest Mobile Service or book your repair online now — fast, reliable, and affordable.
       </p>
       <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-        <button class="bg-white text-indigo-700 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition transform hover:scale-105 shadow-lg">
+        <button class="bg-teal-500 text-white px-8 py-4 rounded-xl font-bold hover:bg-teal-600 transition transform hover:scale-105 shadow-lg">
           Book a Repair
         </button>
-        <button class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-indigo-800 transition">
+        <button class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-gray-900 transition">
           Contact Us
         </button>
       </div>

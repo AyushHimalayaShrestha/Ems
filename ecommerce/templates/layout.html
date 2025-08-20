@@ -62,9 +62,9 @@
         <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="hidden lg:hidden mt-4">
             <ul class="flex flex-col space-y-4 text-base font-bold text-black dark:text-white">
-                <li><a href="#" class="block hover:underline">Home</a></li>
-                <li><a href="#" class="block hover:underline">Our services</a></li>
-                <li><a href="#" class="block hover:underline">About</a></li>
+                <li><a href="/" class="block hover:underline">Home</a></li>
+                <li><a href="{% url 'product_lists'%}" class="block hover:underline">Products</a></li>
+                <li><a href="{%url 'about' %}" class="block hover:underline">About</a></li>
                 <li><a href="#" class="block hover:underline">Contact</a></li>
                 <div class="flex flex-col gap-y-2">
                     <button class="w-full rounded-md bg-[#4A3BFF] text-white px-4 py-2 font-semibold"><a href="#">Sign up </a></button>
