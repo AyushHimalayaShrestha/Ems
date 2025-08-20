@@ -23,7 +23,7 @@ Product List
                src="{{ product.product_image.url }}" 
                alt="{{ product.product_name }}">
           <div class="absolute inset-0 bg-black bg-opacity-25 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-            <a href="#" class="bg-yellow-400 text-gray-900 font-bold py-2 px-6 rounded-full hover:bg-yellow-500">
+            <a href="{% url 'product_details' product.id %}" class="bg-yellow-400 text-gray-900 font-bold py-2 px-6 rounded-full hover:bg-yellow-500">
               View Product
             </a>
           </div>
