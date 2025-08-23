@@ -10,6 +10,7 @@ urlpatterns = [
     path('',views.home),
     path('about/',views.about, name='about'),
     path('product/', include('product.urls')),  # Include product URLs
+    path('dashboard/',include('adminpage.urls')) #Include add category url adminpage
 ]
 
 if settings.DEBUG:
