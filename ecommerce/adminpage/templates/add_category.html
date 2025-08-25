@@ -1,11 +1,12 @@
 {%extends 'dashboard_layout.html' %}
-
+{% load crispy_forms_tags %}
 {%block content%}
-<h1 class="text-center">Add Category</h1>
 
-<form method="POST">
+
+<form method="POST" class="max-w-2xl ml-10 border p-4 rounded-md">
+    <h1 class="text-center text-2xl font-bold mb-10">Add Category</h1>
     {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Save</button>
+    {{form|crispy}}
+    <button type="submit" class="bg-slate-800 hover:bg-slate-800/90 w-full py-2 text-white rounded-md">Save</button>
 </form>
 {% endblock %}
