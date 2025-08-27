@@ -35,8 +35,9 @@ def update_product(request, product_id):
         if form.is_valid():
             form.save()
             messages.success(request, 'Product updated successfully')
-            return redirect('product_lists')
+            return redirect('update_product')
         else:
             messages.error(request, 'Error Updating.')
     else:
         form= ProductForm(instance=instance)
+        return render(request,'updateproduct.html',{'form':form})
