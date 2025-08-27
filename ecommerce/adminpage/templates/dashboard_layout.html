@@ -32,7 +32,7 @@
           <i data-feather="chevron-down"></i>
         </button>
         <div id="productMenu" class="hidden ml-6 mt-1 space-y-1">
-          <a href="#" class="block text-sm text-gray-600 hover:text-blue-600">Add Product</a>
+          <a href="{% url 'add_product' %}" class="block text-sm text-gray-600 hover:text-blue-600">Add Product</a>
           <a href="#" class="block text-sm text-gray-600 hover:text-blue-600">
             Product List
           </a>
@@ -48,7 +48,7 @@
           <i data-feather="chevron-down"></i>
         </button>
         <div id="categoryMenu" class="hidden ml-6 mt-1 space-y-1">
-          <a href="#" class="block text-sm text-gray-600 hover:text-blue-600">Add Category</a>
+          <a href="{% url 'add_category'%}" class="block text-sm text-gray-600 hover:text-blue-600">Add Category</a>
           <a href="#" class="block text-sm text-gray-600 hover:text-blue-600">Category List</a>
         </div>
       </div>
