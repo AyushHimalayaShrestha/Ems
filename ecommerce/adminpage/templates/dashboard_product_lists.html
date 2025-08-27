@@ -1,0 +1,47 @@
+{% extends 'dashboard_layout.html' %}
+{% block content %}
+<section class="bg-gray-50 py-10">
+  <div class="container mx-auto px-4">
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-3xl font-bold text-gray-900">Products</h2>
+      <a href="{% url 'add_product' %}" 
+         class="inline-flex items-center px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg shadow hover:bg-indigo-700 transition-colors">
+        + Add Product
+      </a>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {% for product in product_lists %}
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition-all duration-300 flex flex-col">
+        <!-- Product Image -->
+        <img class="w-full rounded-t-xl" src="{{ product.product_image.url }}" alt="{{ product.product_name }}">
+
+        <!-- Product Info -->
+        <div class="flex-1 flex flex-col p-4">
+          <h3 class="text-lg font-semibold text-gray-900 truncate">{{ product.product_name }}</h3>
+          <p class="text-gray-600 text-sm mt-2 flex-1 overflow-hidden text-ellipsis whitespace-nowrap">
+            {{ product.product_description }}
+          </p>
+
+          <!-- Price + Actions -->
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-gray-900 font-bold text-lg">Rs {{ product.product_price }}</span>
+            <div class="flex gap-2">
+              <a href="{% url 'update_product' product.id %}" 
+                 class="px-3 py-1 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                Edit
+              </a>
+           
+            </div>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <p class="text-gray-600">No products available. Please add some.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

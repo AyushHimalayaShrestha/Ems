@@ -31,7 +31,7 @@ def add_product(request):
 # Product List
 def product_list(request):
     product_lists = Product.objects.all()
-    return render(request,'product_list.html',{'product_lists':product_lists})
+    return render(request,'dashboard_product_lists.html',{'product_lists':product_lists})
 
 # Update Product
 def update_product(request, product_id):
