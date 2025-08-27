@@ -3,7 +3,7 @@
 {%block content%}
 
 
-<form method="POST" class="max-w-2xl ml-10 border p-4 rounded-md">
+<form method="POST" enctype="multipart/form-data" class="max-w-2xl ml-10 border p-4 rounded-md">
     <h1 class="text-center text-2xl font-bold mb-10">Add Product</h1>
     {% csrf_token %}
     {{form|crispy}}

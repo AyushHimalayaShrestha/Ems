@@ -20,10 +20,10 @@ def add_category(request):
 # Product
 def add_product(request):
     if request.method =='POST':
-        form = ProductForm(request.POST)
+        form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('add_product')
+            return redirect('dashboard_product_lists')
     else:
         form = ProductForm()
     return render(request,'add_product.html',{'form':form})
@@ -35,15 +35,23 @@ def product_list(request):
 
 # Update Product
 def update_product(request, product_id):
-    instance = ProductForm.objects.get(id=product_id)
+    instance = Product.objects.get(id=product_id)
     if request.method == 'POST':
         form= ProductForm(request.POST,request.FILES, instance=instance)
         if form.is_valid():
             form.save()
             messages.success(request, 'Product updated successfully')
-            return redirect('update_product')
+            return redirect('dashboard_product_lists')
         else:
             messages.error(request, 'Error Updating.')
     else:
         form= ProductForm(instance=instance)
         return render(request,'updateproduct.html',{'form':form})
+    
+    # Delete Product
+
+def delete_product(request, product_id):
+    product = Product.objects.get(id=product_id)
+    product.delete()
+    messages.success(request, 'Product deleted successfully')
+    return redirect('dashboard_product_lists')
