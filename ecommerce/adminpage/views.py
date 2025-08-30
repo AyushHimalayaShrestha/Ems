@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from product.forms import CategoryForm, ProductForm
-from product.models import Product
+from product.models import Product,Category
 from django.contrib import messages
 # Create your views here.
 
@@ -16,6 +16,11 @@ def add_category(request):
         form=CategoryForm()
         
     return render(request,'add_category.html',{'form':form})
+
+# Category List
+def category_list(request):
+    category_lists = Category.objects.all()
+    return render(request,'dashboard_category_lists.html',{'category_lists':category_lists})
 
 # Product
 def add_product(request):

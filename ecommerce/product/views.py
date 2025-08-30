@@ -17,3 +17,5 @@ def productdetails(request,product_id):
         'product':product
     }
     return render(request,'product/productdetails.html', data)
+
+

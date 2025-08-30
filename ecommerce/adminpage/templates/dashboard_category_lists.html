@@ -1,0 +1,46 @@
+{% extends 'dashboard_layout.html' %}
+{% block content %}
+
+{% if messages %}
+  {% for message in messages %}
+    {% if 'success' in message.tags %}
+      <div class="bg-green-100 text-green-700 px-4 py-2 rounded mb-4">{{ message }}</div>
+    {% elif 'error' in message.tags %}
+      <div class="bg-red-100 text-red-700 px-4 py-2 rounded mb-4">{{ message }}</div>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<section class="bg-gray-50 py-10">
+  <div class="container mx-auto px-4">
+    
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-3xl font-bold text-gray-900">Categories</h2>
+      <a href="{% url 'add_category' %}" 
+         class="inline-flex items-center px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg shadow hover:bg-indigo-700 transition-colors">
+        + Add Category
+      </a>
+    </div>
+
+    <!-- Category Grid -->
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {% for category in category_lists %}
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition-all duration-300 flex flex-col p-6">
+        <h3 class="text-lg font-semibold text-gray-900 truncate">{{ category.category_name }}</h3>
+        
+        <!-- Actions -->
+        <div class="mt-4 flex items-center justify-between">
+          <a href="#" 
+             class="text-sm text-indigo-600 hover:underline">Edit</a>
+          <a href="#" 
+             class="text-sm text-red-600 hover:underline">Delete</a>
+        </div>
+      </div>
+      {% empty %}
+      <p class="text-gray-600 col-span-full text-center">No categories available. Please add some.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
