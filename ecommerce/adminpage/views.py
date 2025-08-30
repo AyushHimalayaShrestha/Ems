@@ -11,7 +11,7 @@ def add_category(request):
         form = CategoryForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('add_category')
+            return redirect('dashboard_category_lists')
     else:
         form=CategoryForm()
         
