@@ -36,6 +36,13 @@ def update_category(request, category_id):
     else:
         form =CategoryForm(instance=instance)
         return render(request,'updatecategory.html',{'form':form})
+    
+# Delete Category
+def delete_category(request, category_id):
+    category=Category.objects.get(id=category_id)
+    category.delete()
+    messages.success(request,"Category deleted successfully")
+    return redirect('dashboard_category_lists')
 
 
 
