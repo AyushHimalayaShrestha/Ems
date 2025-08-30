@@ -23,10 +23,10 @@ def category_list(request):
     return render(request,'dashboard_category_lists.html',{'category_lists':category_lists})
 
 # Update Category
-def upate_catgory(request, category_id):
+def update_category(request, category_id):
     instance = Category.objects.get(id=category_id)
     if request.method =="POST":
-        form =CategoryForm(request.POST,request.FIELS, instance=instance)
+        form =CategoryForm(request.POST,request.FILES, instance=instance)
         if form.is_valid():
             form.save()
             messages.success(request, 'Category updated successfully')
