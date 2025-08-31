@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'adminpage',
     "crispy_forms",
     "crispy_tailwind",
+    'users',
 
 ]
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
