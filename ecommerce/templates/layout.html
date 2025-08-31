@@ -41,8 +41,12 @@
 
             <!-- Desktop Buttons -->
             <div class="hidden lg:flex lg:items-center gap-x-2">
-                <button class="flex items-center text-black dark:text-white justify-center px-6 py-2.5 font-semibold"><a href="#">Sign up</a></button>
+                {% if user.is_authenticated %}
+                <button class="flex items-center text-black dark:text-white justify-center px-6 py-2.5 font-semibold"><a href="#">Logout</a></button>
+                {% else %}
+                <button class="flex items-center text-black dark:text-white justify-center px-6 py-2.5 font-semibold"><a href="{%url 'register'%}">Sign up</a></button>
                 <button class="flex items-center justify-center rounded-md bg-[#4A3BFF] text-white px-6 py-2.5 font-semibold hover:shadow-lg hover:drop-shadow transition duration-200"><a href="#"> Login</a></button>
+                {% endif %}
             </div>
 
             <!-- Mobile Hamburger -->
