@@ -42,7 +42,10 @@
             <!-- Desktop Buttons -->
             <div class="hidden lg:flex lg:items-center gap-x-2">
                 {% if user.is_authenticated %}
-                <button class="flex items-center text-black dark:text-white justify-center px-6 py-2.5 font-semibold"><a href="#">Logout</a></button>
+                  <a href="#" class="text-gray-600 hover:text-black">🛒</a>
+        <a href="#" class="text-gray-600 hover:text-black">👤</a>
+        <span class="flex items-center text-black dark:text-white justify-center px-6 py-2.5 font-semibold">Hi, {{user.username}}</span>
+                <button class="flex items-center text-black dark:text-white justify-center px-6 py-2.5 font-semibold"><a href="{% url 'logout'%}">Logout</a></button>
                 {% else %}
                 <button class="flex items-center text-black dark:text-white justify-center px-6 py-2.5 font-semibold"><a href="{%url 'register'%}">Sign up</a></button>
                 <button class="flex items-center justify-center rounded-md bg-[#4A3BFF] text-white px-6 py-2.5 font-semibold hover:shadow-lg hover:drop-shadow transition duration-200"><a href="{% url 'login' %}"> Login</a></button>
@@ -71,8 +74,14 @@
                 <li><a href="{%url 'about' %}" class="block hover:underline">About</a></li>
                 <li><a href="#" class="block hover:underline">Contact</a></li>
                 <div class="flex flex-col gap-y-2">
+                     {% if user.is_authenticated %}
+                       <a href="#" class="block text-gray-600 hover:text-black">🛒 Cart</a>
+    <a href="#" class="block text-gray-600 hover:text-black">👤 Account</a>
+                      <button class="w-full rounded-md bg-[#4A3BFF] text-white px-4 py-2 font-semibold"><a href="#">Logout </a></button>
+                    {% else %}
                     <button class="w-full rounded-md bg-[#4A3BFF] text-white px-4 py-2 font-semibold"><a href="#">Sign up </a></button>
                     <button class="w-full rounded-md bg-[#4A3BFF] text-white px-4 py-2 font-semibold"><a href="#">Login </a></button>
+                    {% endif %}
                 </div>
             </ul>
         </div>
