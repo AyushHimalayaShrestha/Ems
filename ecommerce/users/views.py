@@ -40,11 +40,11 @@ def login_view(request):
         form = LoginForm()
         return render(request,'login.html',{'form':form})
     
-    # logout view
-    def logout_view(request):
-        logout(request, user)
-        messages.success(request,"You have been logged out.")
-        return redirect('login')
+# logout view
+def logout_view(request):
+    logout(request)
+    messages.success(request,"You have been logged out.")
+    return redirect('login')
 
     
 
