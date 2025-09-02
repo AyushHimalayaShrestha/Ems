@@ -28,17 +28,21 @@ def login_view(request):
         if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
-
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request,user)
                 messages.success(request,"Login Successful")
                 return redirect('/')
             else:
-                messages.error(request,"Invalid username or password")
+                messages.error(request,"This account is inactive.")
+        
+        else:
+            messages.error(request,"Invalid username or password")
+        return render(request,'login.html',{'form':form})
+    
     else:
         form = LoginForm()
-        return render(request,'login.html',{'form':form})
+    return render(request,'login.html',{'form':form})
     
 # logout view
 def logout_view(request):
