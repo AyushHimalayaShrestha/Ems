@@ -29,20 +29,23 @@ def login_view(request):
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
             user = authenticate(request, username=username, password=password)
+
             if user is not None:
                 login(request,user)
                 messages.success(request,"Login Successful")
-                return redirect('/')
+               
+            if user.is_staff:
+                return redirect('dashboard_product_lists')
             else:
-                messages.error(request,"This account is inactive.")
+                next_url =request.GET.get('next','/')
+                return redirect(next_url)
         
         else:
             messages.error(request,"Invalid username or password")
-        return render(request,'login.html',{'form':form})
+
+    return render(request,'login.html',{'form':LoginForm})
     
-    else:
-        form = LoginForm()
-    return render(request,'login.html',{'form':form})
+  
     
 # logout view
 def logout_view(request):
