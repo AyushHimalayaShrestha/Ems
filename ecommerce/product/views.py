@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import *
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 # View for displaying product lists
@@ -19,3 +19,7 @@ def productdetails(request,product_id):
     return render(request,'product/productdetails.html', data)
 
 
+# cart lists
+@login_required
+def cart_lists(request):
+    return render(request, "cart/cart.html")
