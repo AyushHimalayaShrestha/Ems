@@ -36,7 +36,9 @@ Product List
           <div class="flex items-center justify-between mt-4">
             <span class="text-gray-900 font-bold text-lg">Rs {{ product.product_price }}</span>
             <button class="bg-gray-900 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 transition-colors">
+              <a href="{% url 'cart_lists' %}">
               Add to Cart
+              </a>
             </button>
           </div>
         </div>

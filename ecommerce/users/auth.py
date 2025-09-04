@@ -8,7 +8,7 @@ def admin_only(view_function):
             return redirect('/')
     return wrapper_function
 
-
+# if authenticated
 def redirect_if_logged_in(view_func):
     def wrapper(request,*args,**kwargs):
         if request.user.is_authenticated:

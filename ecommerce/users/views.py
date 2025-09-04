@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import LoginForm
 from django.contrib.auth import authenticate, login, logout
+from users.auth import redirect_if_logged_in
 
 # Create your views here.
 
@@ -23,7 +24,7 @@ def register_view(request):
         return render(request,'register.html',{'form':form})
 
 # Login View 
-
+@redirect_if_logged_in
 def login_view(request):
     if request.method =="POST":
         form = LoginForm(request.POST)
