@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import LoginForm
 from django.contrib.auth import authenticate, login, logout
+
 # Create your views here.
 
 # User Registration
@@ -22,6 +23,7 @@ def register_view(request):
         return render(request,'register.html',{'form':form})
 
 # Login View 
+
 def login_view(request):
     if request.method =="POST":
         form = LoginForm(request.POST)
