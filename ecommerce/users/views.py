@@ -3,11 +3,13 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import LoginForm
 from django.contrib.auth import authenticate, login, logout
-from users.auth import redirect_if_logged_in
+from .auth import redirect_if_logged_in
+
 
 # Create your views here.
 
 # User Registration
+@redirect_if_logged_in
 def register_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)

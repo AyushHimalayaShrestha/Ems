@@ -8,6 +8,8 @@ from django.contrib.auth.decorators import login_required
 
 
 # Category
+@admin_only
+@login_required
 def add_category(request):
     if request.method == 'POST':
         form = CategoryForm(request.POST)
