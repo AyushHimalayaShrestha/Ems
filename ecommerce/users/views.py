@@ -9,7 +9,7 @@ from .auth import redirect_if_logged_in
 # Create your views here.
 
 # User Registration
-@redirect_if_logged_in
+
 def register_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
