@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import *
 from django.contrib.auth.decorators import login_required
 # Create your views here.
@@ -23,3 +23,20 @@ def productdetails(request,product_id):
 @login_required()
 def cart_lists(request):
     return render(request, "cart/cart.html")
+
+# add to cart
+@login_required()
+def add_to_cart(request, product_id):
+    product = Product.objects.get(id=product_id)
+    quantity_str= request.POST.get('quantity','1')
+    quantity=int(quantity_str) if quantity_str and quantity_str.isdigit() and int(quantity_str) > 0 else 1
+    cart_item, created = Cart.objects.get_or_create(
+        user=request.user,
+        product=product,
+        defaults={'quantity': quantity}
+        )
+    if not created:
+        cart_item.quantity += quantity
+        cart_item.save()
+    return redirect('cart_lists')
+    
