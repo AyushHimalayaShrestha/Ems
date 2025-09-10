@@ -39,12 +39,20 @@ class Order(models.Model):
         
     )
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     totalPrice = models.IntegerField()
     payment_method =models.CharField(choices=PAYMENT_METHOD)
     payment_status = models.CharField(default="Pending")
     email = models.EmailField()
     contact_no = models.CharField()
     address = models.CharField(max_length=150)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+# order list
+class OrderItem(models.Model):
+    product =models.ForeignKey(Product,on_delete=models.CASCADE)
+    order = models.ForeignKey(Order,on_delete=models.CASCADE,related_name='items')
+    price = models.IntegerField()
+    quantity = models.PositiveIntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

@@ -20,6 +20,7 @@ def productdetails(request,product_id):
 
 
 # cart lists
-@login_required
+@login_required()
 def cart_lists(request):
+    
     return render(request, "cart/cart.html")
