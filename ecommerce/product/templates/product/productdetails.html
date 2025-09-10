@@ -14,9 +14,10 @@ Product Details
                src="{{ product.product_image.url }}" alt="{{ product.product_name }}">
         </div>
         <div class="flex gap-4 mt-6">
+          <a href="{% url 'cart_lists' %}">
           <button class="flex-1 bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 px-5 rounded-full font-semibold shadow-md hover:opacity-90 transition">
             🛒 Add to Cart
-          </button>
+          </button></a>
           <button class="flex-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-3 px-5 rounded-full font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition">
             ❤️ Wishlist
           </button>

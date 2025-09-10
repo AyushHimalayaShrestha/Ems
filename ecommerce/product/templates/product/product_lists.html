@@ -35,11 +35,13 @@ Product List
           <p class="text-gray-500 text-sm mb-4 line-clamp-3">{{ product.product_description }}</p>
           <div class="flex items-center justify-between mt-4">
             <span class="text-gray-900 font-bold text-lg">Rs {{ product.product_price }}</span>
-            <button class="bg-gray-900 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 transition-colors">
-              <a href="{% url 'cart_lists' %}">
-              Add to Cart
+
+            <button class="bg-yellow-500 text-gray-200 py-2 px-4 rounded-full font-bold hover:bg-yellow-600 transition-colors">
+              <a href="{% url 'product_details' product.id %}">
+              View Product
               </a>
             </button>
+
           </div>
         </div>
       </div>
