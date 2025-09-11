@@ -15,11 +15,14 @@
         </div>
 
         <!-- Add to Cart & Quantity Selector -->
-        <div class="flex items-center gap-4 mt-8">
+        <form method="POST" action="{% url 'add_to_cart' product.id %}" class="flex items-center gap-4 mt-8">
+          {% csrf_token %}
           <!-- Add to Cart Button -->
+           
           <button class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white h-12 px-6 rounded-full font-semibold shadow-md hover:opacity-90 hover:shadow-lg transition flex items-center gap-2">
             🛒 Add to Cart
           </button>
+          
 
           <!-- Quantity Label -->
           <label for="quantity" class="text-sm font-semibold text-gray-700 dark:text-gray-200">
@@ -33,6 +36,7 @@
                     onclick="changeQuantity(-1)">
               -
             </button>
+
             <input type="number" id="quantity" name="quantity" min="1" value="1"
                    class="w-14 text-center bg-transparent text-gray-900 dark:text-white focus:outline-none" />
             <button type="button"
@@ -41,7 +45,7 @@
               +
             </button>
           </div>
-        </div>
+        </form>
       </div>
 
       <!-- Product Info Section -->

@@ -23,7 +23,8 @@ def productdetails(request,product_id):
 # cart lists
 @login_required()
 def cart_lists(request):
-    return render(request, "cart/cart.html")
+    user_cart = Cart.objects.filter(user=request.user)
+    return render(request, "cart/cart.html", {'cart_items': user_cart})
 
 # add to cart
 @login_required()

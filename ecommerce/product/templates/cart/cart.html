@@ -9,16 +9,17 @@
     <div class="flex-2 space-y-6">
 
       <!-- Item 1 -->
+      {% for item in cart_items %}
       <div class="flex items-center gap-6 border border-slate-200 rounded-lg p-5 shadow-sm hover:shadow-md transition relative bg-white">
-        <img src="https://via.placeholder.com/120" alt="Product 1" class="w-28 h-28 rounded-lg object-cover" />
+        <img src="{{item.product.product_image.url}}" alt="Product 1" class="w-28 h-28 rounded-lg object-cover" />
         <div class="flex-1">
-          <h2 class="text-lg font-semibold text-slate-800">Running Shoes</h2>
+          <h2 class="text-lg font-semibold text-slate-800">{{item.product.product_name}}</h2>
           <div class="flex justify-between items-center">
             <div>
-              <p class="text-slate-500 mt-1">$60.00</p>
+              <p class="text-slate-500 mt-1">Rs {{item.product.product_price}}</p>
               <p class="text-sm text-slate-500"><span class="mr-1">Quantity:</span>2</p>
             </div>
-            <p class="text-slate-600"><span class="font-semibold text-slate-800">Total:</span> $120.00</p>
+            <p class="text-slate-600"><span class="font-semibold text-slate-800">Total:</span></p>
           </div>
         </div>
         <a href="#" class="absolute top-2 right-2 cursor-pointer hover:text-red-500">
@@ -26,24 +27,7 @@
         </a>
       </div>
 
-      <!-- Item 2 -->
-      <div class="flex items-center gap-6 border border-slate-200 rounded-lg p-5 shadow-sm hover:shadow-md transition relative bg-white">
-        <img src="https://via.placeholder.com/120" alt="Product 2" class="w-28 h-28 rounded-lg object-cover" />
-        <div class="flex-1">
-          <h2 class="text-lg font-semibold text-slate-800">Casual T-Shirt</h2>
-          <div class="flex justify-between items-center">
-            <div>
-              <p class="text-slate-500 mt-1">$25.00</p>
-              <p class="text-sm text-slate-500"><span class="mr-1">Quantity:</span>1</p>
-            </div>
-            <p class="text-slate-600"><span class="font-semibold text-slate-800">Total:</span> $25.00</p>
-          </div>
-        </div>
-        <a href="#" class="absolute top-2 right-2 cursor-pointer hover:text-red-500">
-          ✕
-        </a>
-      </div>
-
+      {% endfor%}
     </div>
 
     <!-- Order Summary (Right) -->
