@@ -27,7 +27,11 @@ def cart_lists(request):
     # Calculate total price for each cart item
     for item in user_cart:
        item.total=item.product.product_price * item.quantity
-    return render(request, "cart/cart.html", {'cart_items': user_cart})
+
+    # Calculate overall total price
+    overall_total = sum(item.total for item in user_cart)
+
+    return render(request, "cart/cart.html", {'cart_items': user_cart, 'overall_total': overall_total})
 
 # add to cart
 @login_required()

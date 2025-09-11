@@ -35,16 +35,16 @@
       <div class="p-6 border border-slate-200 rounded-lg bg-white shadow-sm hover:shadow-md transition">
         <h2 class="text-xl font-semibold text-slate-800 mb-4">Order Summary</h2>
 
-        <!-- Subtotal -->
+        <!-- Overall total -->
         <div class="flex justify-between mb-2">
           <span class="text-slate-600">Subtotal</span>
-          <span class="text-slate-800 font-medium">$145.00</span>
+          <span class="text-slate-800 font-medium">{{overall_total}}</span>
         </div>
 
         <!-- Shipping -->
         <div class="flex justify-between mb-2">
           <span class="text-slate-600">Shipping</span>
-          <span class="text-slate-800 font-medium">$0</span>
+          <span class="text-slate-800 font-medium">0</span>
         </div>
 
         <hr class="my-2 border-slate-300">
@@ -52,7 +52,7 @@
         <!-- Total -->
         <div class="flex justify-between mb-4">
           <span class="text-slate-800 font-semibold text-lg">Total</span>
-          <span class="text-slate-800 font-semibold text-lg">$145.00</span>
+          <span class="text-slate-800 font-semibold text-lg">{{overall_total}}</span>
         </div>
 
         <!-- Proceed Button -->
