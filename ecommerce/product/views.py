@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import *
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 # Create your views here.
 
 # View for displaying product lists
@@ -38,5 +39,7 @@ def add_to_cart(request, product_id):
     if not created:
         cart_item.quantity += quantity
         cart_item.save()
+        messages.success(request, f"{product.product_name} added to cart successfully")
+   
     return redirect('cart_lists')
     
