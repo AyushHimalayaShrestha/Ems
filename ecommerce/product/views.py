@@ -24,6 +24,9 @@ def productdetails(request,product_id):
 @login_required()
 def cart_lists(request):
     user_cart = Cart.objects.filter(user=request.user)
+    # Calculate total price for each cart item
+    for item in user_cart:
+       item.total=item.product.product_price * item.quantity
     return render(request, "cart/cart.html", {'cart_items': user_cart})
 
 # add to cart
