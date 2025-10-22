@@ -4,6 +4,8 @@ from django.contrib import messages
 from .forms import LoginForm
 from django.contrib.auth import authenticate, login, logout
 from .auth import redirect_if_logged_in
+from django.core.mail import send_mail
+
 
 
 # Create your views here.
@@ -58,5 +60,20 @@ def logout_view(request):
     messages.success(request,"You have been logged out.")
     return redirect('login')
 
+# contact us view
+def contact(request):
+    if request.method =="POST":
+        name=request.POST.get('name')
+        email =request.POST.get('email')
+        message =request.POST.get('message')
+
+        send_mail(
+            subject=f"Contact Us Message from {name}",
+            message=message,
+            from_email =email,
+            recipient_list =['example@example.com'],    
+        )
+        return render(request,'contact.html',{'success':True})
+    return render(request,'contact.html')
     
 
