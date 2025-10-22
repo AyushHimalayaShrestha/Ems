@@ -5,6 +5,7 @@ from .forms import LoginForm
 from django.contrib.auth import authenticate, login, logout
 from .auth import redirect_if_logged_in
 from django.core.mail import send_mail
+from django.conf import settings
 
 
 
@@ -62,18 +63,28 @@ def logout_view(request):
 
 # contact us view
 def contact(request):
-    if request.method =="POST":
-        name=request.POST.get('name')
-        email =request.POST.get('email')
-        message =request.POST.get('message')
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+
+        full_message = f"""
+        You have received a new message from {name}.
+        Email: {email}
+
+        Message:
+        {message}
+        """
 
         send_mail(
             subject=f"Contact Us Message from {name}",
-            message=message,
-            from_email =email,
-            recipient_list =['aayush625@gmail.com'],    
+            message=full_message,
+            from_email=settings.EMAIL_HOST_USER,   
+            recipient_list=['ems78352@gmail.com'],  
+            fail_silently=False
         )
-        return render(request,'contact.html',{'success':True})
-    return render(request,'contact.html')
-    
+
+        return render(request, 'contact.html', {'success': True})
+
+    return render(request, 'contact.html')
 
