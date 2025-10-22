@@ -71,7 +71,7 @@ def contact(request):
             subject=f"Contact Us Message from {name}",
             message=message,
             from_email =email,
-            recipient_list =['example@example.com'],    
+            recipient_list =['aayush625@gmail.com'],    
         )
         return render(request,'contact.html',{'success':True})
     return render(request,'contact.html')
