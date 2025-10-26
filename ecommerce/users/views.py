@@ -31,7 +31,7 @@ def register_view(request):
 # Login View 
 @redirect_if_logged_in
 def login_view(request):
-    if request.method =="POST":
+    if request.method == "POST":
         form = LoginForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data['username']
@@ -39,19 +39,23 @@ def login_view(request):
             user = authenticate(request, username=username, password=password)
 
             if user is not None:
-                login(request,user)
-                messages.success(request,"Login Successful")
-               
-            if user.is_staff:
-                return redirect('dashboard_product_lists')
-            else:
-                next_url =request.GET.get('next','/')
-                return redirect(next_url)
-        
-        else:
-            messages.error(request,"Invalid username or password")
+                login(request, user)
+                messages.success(request, "Login Successful")
 
-    return render(request,'login.html',{'form':LoginForm})
+                if user.is_staff:
+                    return redirect('dashboard_product_lists')
+                else:
+                    next_url = request.GET.get('next', '/')
+                    return redirect(next_url)
+            else:
+                messages.error(request, "Invalid username or password")
+        else:
+            messages.error(request, "Invalid form submission")
+    else:
+        form = LoginForm()
+
+    return render(request, 'login.html', {'form': form})
+
     
   
     
